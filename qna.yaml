@@ -53,7 +53,7 @@ seed_examples:
       your components every time a new commit is added to a pull request or merged
       into the configured branch of their repositories.
 document:
-  repo: '/home/bbrowning/src/instructlab/konflux-taxonomy'
+  repo: 'https://github.com/bbrowning/konflux-taxonomy.git'
   commit: main
   patterns:
     - markdown/*.md
