@@ -92,21 +92,52 @@ Some example questions to ask, along with example responses:
 
 
 ```
-You are a helpful AI assistant that answers questions about the Konflux open source project. If you do not know an answer, say you do not know instead of making up an answer. Keep your answers under 100 words. What is the Konflux project?
+You are a helpful AI assistant that answers questions about the
+Konflux open source project. If you do not know an answer, say you do
+not know instead of making up an answer. Keep your answers under 100
+words. What is the Konflux project?
 
-The Konflux project is an open-source initiative that aims to simplify and automate the process of building, testing, and deploying applications in a Kubernetes environment. By using Konflux, developers can create reusable, modular, and maintainable code, which can be easily integrated into various environments, such as on-premises, cloud, or hybrid systems. Konflux provides a user-friendly interface, which allows developers to manage their applications' lifecycle more efficiently, reducing the time and effort required for manual tasks. Overall, Konflux is a valuable tool for organizations looking to streamline their DevOps processes, improve collaboration, and ensure consistent application delivery across different environments.
+The Konflux project is an open-source initiative that aims to simplify
+and automate the process of building, testing, and deploying
+applications in a Kubernetes environment. By using Konflux, developers
+can create reusable, modular, and maintainable code, which can be
+easily integrated into various environments, such as on-premises,
+cloud, or hybrid systems. Konflux provides a user-friendly interface,
+which allows developers to manage their applications' lifecycle more
+efficiently, reducing the time and effort required for manual
+tasks. Overall, Konflux is a valuable tool for organizations looking
+to streamline their DevOps processes, improve collaboration, and
+ensure consistent application delivery across different environments.
 ```
 
 
 ```
-You are a helpful AI assistant that answers questions about the Konflux open source project. If you do not know an answer, say you do not know instead of making up an answer. Keep your answers under 100 words. How do I get started with Konflux?
+You are a helpful AI assistant that answers questions about the
+Konflux open source project. If you do not know an answer, say you do
+not know instead of making up an answer. Keep your answers under 100
+words. How do I get started with Konflux?
 
-To get started with Konflux, first, ensure that your development environment meets the project's requirements, which include a supported version of Kubernetes, Helm, and other necessary tools. Next, follow the installation guide in the Konflux documentation, which provides step-by-step instructions on how to install and configure the platform. After installation, create your first application using Konflux's user-friendly interface, which guides you through the process of defining, building, testing, and deploying your application in a Kubernetes environment. Finally, explore the project's features, such as automated builds, testing, and deployments, to further streamline your development workflow. By following these steps, you can quickly get started with Konflux and leverage its benefits for your development projects.
+To get started with Konflux, first, ensure that your development
+environment meets the project's requirements, which include a
+supported version of Kubernetes, Helm, and other necessary
+tools. Next, follow the installation guide in the Konflux
+documentation, which provides step-by-step instructions on how to
+install and configure the platform. After installation, create your
+first application using Konflux's user-friendly interface, which
+guides you through the process of defining, building, testing, and
+deploying your application in a Kubernetes environment. Finally,
+explore the project's features, such as automated builds, testing, and
+deployments, to further streamline your development workflow. By
+following these steps, you can quickly get started with Konflux and
+leverage its benefits for your development projects.
 ```
 
 
 ```
-You are a helpful AI assistant that answers questions about the Konflux open source project. If you do not know an answer, say you do not know instead of making up an answer. Keep your answers under 100 words. What are Konflux environments?
+You are a helpful AI assistant that answers questions about the
+Konflux open source project. If you do not know an answer, say you do
+not know instead of making up an answer. Keep your answers under 100
+words. What are Konflux environments?
 
 ...
 ```
