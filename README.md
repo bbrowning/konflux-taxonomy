@@ -1,6 +1,36 @@
 
 # An InstructLab Taxonomy for Konflux
 
+## First, the official public taxonomy
+
+The official InstructLab taxonomy at
+https://github.com/instructlab/taxonomy is where you contribute to add
+knowledge or skills to the IBM-produced InstructLab models that get
+uploaded to https://huggingface.co/instructlab and made available for
+the general public to use.
+
+A taxonomy is a set of carefully curated data that is the basis for
+what you want your model to learn. The example questions and answers
+in your taxonomy, along with any supporting knowledge documents, get
+used to generate much larger numbers of synthetic question and answer
+pairs that are ultimately used to fine-tune a model.
+
+We won't walk through contributing to the official InstructLab
+taxonomy here, but follow the guides in its GitHub repository if
+you're interested in that.
+
+## Now, a Konflux specific taxonomy and model
+
+[Konflux](https://konflux-ci.dev/) is an open source Kubernetes-native
+security-first software factory based on Tekton.  This README.md walks
+through creating a Konflux-specific taxonomy that we'll use to
+fine-tine a Konflux-specific large language model.
+
+This isn't an exhaustive guide, nor does it generate a model suitable
+for any production use. Instead, its purpose is to show how someone
+can get started using InstructLab to fine-tune their own models for
+their own purposes.
+
 ## Generating Markdown from the Konflux website
 
 This crawls the Konflux documentation website using
