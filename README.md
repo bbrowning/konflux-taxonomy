@@ -1,6 +1,24 @@
 
 # An InstructLab Taxonomy for Konflux
 
+## Fine tuning, RAG, etc
+
+InstructLab is a specific approach to model fine tuning. There's a lot
+of general knowledge on the internet about fine tuning vs RAG, and
+which to use depends on the use case, the dataset, the deployment
+environment. There are plenty of valid cases where both fine tuning
+and RAG may be used together.
+
+General use cases appropriate for fine tuning:
+- Given a model a broad base of domain-specific information that it
+  can draw from when generating responses.
+- Altering the tone or style of the model's responses.
+- Resource-constrained environments where a smaller model and/or fewer
+  moving parts is preferred compared to a generalized model plus RAG.
+
+
+A good read: https://helixml.substack.com/p/how-we-got-fine-tuning-mistral-7b
+
 ## First, the official public taxonomy
 
 The official InstructLab taxonomy at
@@ -13,7 +31,7 @@ A taxonomy is a set of carefully curated data that is the basis for
 what you want your model to learn. The example questions and answers
 in your taxonomy, along with any supporting knowledge documents, get
 used to generate much larger numbers of synthetic question and answer
-pairs that are ultimately used to fine-tune a model.
+pairs that are ultimately used to fine tune a model.
 
 We won't walk through contributing to the official InstructLab
 taxonomy here, but follow the guides in its GitHub repository if
@@ -24,11 +42,11 @@ you're interested in that.
 [Konflux](https://konflux-ci.dev/) is an open source Kubernetes-native
 security-first software factory based on Tekton.  This README.md walks
 through creating a Konflux-specific taxonomy that we'll use to
-fine-tine a Konflux-specific large language model.
+fine tune a Konflux-specific large language model.
 
 This isn't an exhaustive guide, nor does it generate a model suitable
 for any production use. Instead, its purpose is to show how someone
-can get started using InstructLab to fine-tune their own models for
+can get started using InstructLab to fine tune their own models for
 their own purposes.
 
 ## Generating Markdown from the Konflux website
@@ -61,11 +79,14 @@ trying to teach the model, the more generated instructions we need so
 that as it randomly picks parts of our knowledge we cover the entire
 corpus.
 
-Assuming you've cloned this repository into `~/src/instructlab/konflux-taxonomy`:
+Assuming you've cloned this repository and have a working `ilab` CLI:
 
 ```
-ilab generate --taxonomy-path ~/src/instructlab/konflux-taxonomy/qna.yaml --num-instructions 300
+ilab download
+ilab generate --taxonomy-path qna.yaml --num-instructions 20
 ```
+
+Scrub any odd examples from the generated samples - "<noinput>" tokens, "Here are the 5 tasks", etc. This is kind of manual for now, but needed if you want higher quality training output. At some point we'll feed this data back into a teacher model again to evaluate and scrub any poor samples.
 
 Generating 300 instructions takes about 30 minutes on a Fedora 39
 machine with Intel i9-13900KF, 32GB RAM, and Nvidia RTX 4080 GPU with
@@ -76,27 +97,25 @@ vary.
 
 The `generated/` folder contains some sample generated data.
 
-- `generated/train_merlinite-7b-lab-Q4_K_M.jsonl` is the actual data
-  that will be used to train the model
-- `generated/test_merlinite-7b-lab-Q4_K_M.jsonl` is the question and
-  answer pairs from qna.yaml that will be used by the training process
-  when testing inference on the fine-tuned model.
+- `generated/train_*.jsonl` is the actual data that will be used to
+  train the model
+- `generated/test_*.jsonl` is the question and answer pairs from
+  qna.yaml that will be used by the training process when testing
+  inference on the fine tuned model.
 
 Explore the generated samples with jq:
 
 ```
-jq -s '.' train_merlinite-7b-lab-Q4_K_M.jsonl
+jq -s '.' generated/train_*.jsonl
 ```
 
 
 ## Train the model
 
-Assuming you've cloned this repository into
-`~/src/instructlab/konflux-taxonomy` and have GPU acceleration working
-from a Linux machine:
+Assuming you have GPU acceleration working from a Linux machine:
 
 ```
-ilab train --device cuda --input-dir ~/src/instructlab/konflux-taxonomy/generated --num-epochs 2
+ilab train --device cuda --input-dir generated --num-epochs 2
 ```
 
 Training takes about 4 minutes on a Fedora 39 machine with Intel
