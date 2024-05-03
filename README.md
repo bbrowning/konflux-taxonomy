@@ -116,7 +116,7 @@ jq -s '.' pre-generated/train_*.jsonl
 Assuming you have GPU acceleration working from a Linux machine:
 
 ```
-ilab train --device cuda --input-dir generated --num-epochs 2
+ilab train --device cuda --input-dir generated
 ```
 
 If you'd prefer to use the pre-generated data, substitute `generated`
