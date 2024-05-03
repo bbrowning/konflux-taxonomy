@@ -79,10 +79,10 @@ trying to teach the model, the more generated instructions we need so
 that as it randomly picks parts of our knowledge we cover the entire
 corpus.
 
-Assuming you've cloned this repository and have a working `ilab` CLI:
+Assuming you've cloned this repository and have a working `ilab` CLI
+with a model already downloaded:
 
 ```
-ilab download
 ilab generate --taxonomy-path qna.yaml --num-instructions 20
 ```
 
