@@ -2,7 +2,7 @@ task_description: Teach the model about the Konflux open source project
 created_by: bbrowning
 domain: open source projects
 seed_examples:
-  - question: What is the Konflux open source project?
+  - question: What is Konflux?
     answer: >
       Konflux is your one stop shop for building, testing, and deploying source
       code with secure CI/CD. Simply input the URL of your repository into our
@@ -10,10 +10,10 @@ seed_examples:
       testing your code, and ultimately deploying your application to the hybrid
       cloud. Quickly get your app out to the world and then immediately see the
       value that it creates.
-  - question: What technologies does Konflux use under the hood?
+  - question: What technologies does Konflux use?
     answer: >
-      Under the hood, Konflux is largely based on OpenShift, Tekton, and ArgoCD.
-  - question: What is the Enterprise Contract in Konflux?
+      Konflux is largely based on OpenShift, Tekton, and ArgoCD.
+  - question: What is the Enterprise Contract?
     answer: >
       The Enterprise Contract (EC) is an artifact verifier and customizable policy
       checker. By default, Konflux adds the Enterprise Contract as an integration
@@ -21,7 +21,7 @@ seed_examples:
       supply chain secure and ensures container images comply with your organization’s
       policies. It does this by verifying the security and provenance of builds
       created through Konflux.
-  - question: How do I import code from my GitHub repository in Konflux?
+  - question: How do I import code from my GitHub repository?
     answer: >
       To use your own code to build your application with Konflux, complete the
       following steps:
@@ -37,7 +37,7 @@ seed_examples:
       the source code you want to use.
 
       4. Click Import code.
-  - question: Why might I want to upgrade my Konflux build pipeline to a custom build?
+  - question: Why would I upgrade my build pipeline to a custom build?
     answer: >
       There are three reasons you might want to upgrade your build pipeline to a
       custom build:
