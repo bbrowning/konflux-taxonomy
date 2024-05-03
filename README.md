@@ -86,27 +86,28 @@ ilab download
 ilab generate --taxonomy-path qna.yaml --num-instructions 20
 ```
 
-Scrub any odd examples from the generated samples - "<noinput>" tokens, "Here are the 5 tasks", etc. This is kind of manual for now, but needed if you want higher quality training output. At some point we'll feed this data back into a teacher model again to evaluate and scrub any poor samples.
-
-Generating 300 instructions takes about 30 minutes on a Fedora 39
-machine with Intel i9-13900KF, 32GB RAM, and Nvidia RTX 4080 GPU with
-InstructLab properly setup for GPU acceleration. Your mileage may
-vary.
+It takes more than 20 instructions to teach the model about the entire
+Konflux website, but for simple testing purposes 20 is enough to see
+how the process works. The more instructions you generate, the longer
+it takes. Generating 300 instructions takes about 30 minutes on a
+Fedora 39 machine with Intel i9-13900KF, 32GB RAM, and Nvidia RTX 4080
+GPU with InstructLab properly setup for GPU acceleration. Your mileage
+may vary.
 
 ### Existing Generated Data
 
-The `generated/` folder contains some sample generated data.
+The `pre-generated/` folder contains some sample generated data if you'd like to test with a larger number of instructions than 20.
 
-- `generated/train_*.jsonl` is the actual data that will be used to
+- `pre-generated/train_*.jsonl` is the actual data that will be used to
   train the model
-- `generated/test_*.jsonl` is the question and answer pairs from
+- `pre-generated/test_*.jsonl` is the question and answer pairs from
   qna.yaml that will be used by the training process when testing
   inference on the fine tuned model.
 
 Explore the generated samples with jq:
 
 ```
-jq -s '.' generated/train_*.jsonl
+jq -s '.' pre-generated/train_*.jsonl
 ```
 
 
@@ -117,6 +118,9 @@ Assuming you have GPU acceleration working from a Linux machine:
 ```
 ilab train --device cuda --input-dir generated --num-epochs 2
 ```
+
+If you'd prefer to use the pre-generated data, substitute `generated`
+for `pre-generated` in the command above.
 
 Training takes about 4 minutes on a Fedora 39 machine with Intel
 i9-13900KF, 32GB RAM, and Nvidia RTX 4080 GPU with InstructLab
