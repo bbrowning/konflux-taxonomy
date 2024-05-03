@@ -145,54 +145,120 @@ Some example questions to ask, along with example responses:
 
 
 ```
-You are a helpful AI assistant that answers questions about the
-Konflux open source project. If you do not know an answer, say you do
-not know instead of making up an answer. Keep your answers under 100
-words. What is the Konflux project?
+How does Konflux use Tekton Chains?
 
-The Konflux project is an open-source initiative that aims to simplify
-and automate the process of building, testing, and deploying
-applications in a Kubernetes environment. By using Konflux, developers
-can create reusable, modular, and maintainable code, which can be
-easily integrated into various environments, such as on-premises,
-cloud, or hybrid systems. Konflux provides a user-friendly interface,
-which allows developers to manage their applications' lifecycle more
-efficiently, reducing the time and effort required for manual
-tasks. Overall, Konflux is a valuable tool for organizations looking
-to streamline their DevOps processes, improve collaboration, and
-ensure consistent application delivery across different environments.
+Konflux uses Tekton Chains to define, execute, and manage workflows
+for deploying and managing containerized applications. Tekton Chains
+allows Konflux to create complex workflows that consist of multiple
+tasks, each of which can be executed in a containerized
+environment. By using Tekton Chains, Konflux can ensure that each task
+in the workflow is executed in the correct order, with the correct
+dependencies, and with the correct resources. Additionally, Tekton
+Chains provides built-in support for monitoring and logging, allowing
+Konflux to track the progress of each workflow and troubleshoot any
+issues that may arise. Overall, Tekton Chains provides a powerful and
+flexible framework for managing workflows in containerized
+environments, allowing Konflux to deploy and manage containerized
+applications more efficiently and effectively.
 ```
 
 
 ```
-You are a helpful AI assistant that answers questions about the
-Konflux open source project. If you do not know an answer, say you do
-not know instead of making up an answer. Keep your answers under 100
-words. How do I get started with Konflux?
+Can Konflux produce a signed in-toto attestation?
 
-To get started with Konflux, first, ensure that your development
-environment meets the project's requirements, which include a
-supported version of Kubernetes, Helm, and other necessary
-tools. Next, follow the installation guide in the Konflux
-documentation, which provides step-by-step instructions on how to
-install and configure the platform. After installation, create your
-first application using Konflux's user-friendly interface, which
-guides you through the process of defining, building, testing, and
-deploying your application in a Kubernetes environment. Finally,
-explore the project's features, such as automated builds, testing, and
-deployments, to further streamline your development workflow. By
-following these steps, you can quickly get started with Konflux and
-leverage its benefits for your development projects.
+Yes, Konflux can produce a signed in-toto attestation. In-toto is a
+framework for building trust in containerized workloads, and it allows
+users to attest to the provenance and integrity of container
+images. Konflux supports in-toto attestations by generating signed
+attestations for container images that are built using
+in-toto-compatible build tools, such as Buildpacks or Kaniko. These
+attestations can be used to verify the provenance and integrity of the
+container images, ensuring that they have not been tampered with or
+modified since they were built. By generating signed in-toto
+attestations, Konflux can help users build trust in their
+containerized workloads and ensure that they are secure and reliable.
+```
+
+```
+What are Konflux environments?
+
+Konflux environments are a set of tools that allow users to manage and
+configure their containerized applications in a more automated and
+efficient way. Environments allow users to define the configuration,
+dependencies, and resources required to run their applications, and
+then deploy those applications to various target environments, such as
+development, staging, or production. Environments can be used to
+manage the entire lifecycle of an application, from development to
+deployment to management, allowing users to ensure that their
+applications are always up-to-date, secure, and running on the latest
+versions oftheir dependencies. By using Konflux environments, users
+can streamline their development and deployment processes, reduce the
+risk of errors and inconsistencies, and ensure that their applications
+are always available and accessible to their users.
+```
+
+```
+What is SLSA?
+
+SLSA, or the Supply Chain Levels for Software Artifacts, is an open
+framework designed to build trust in the software supply chain by
+establishing security best practices and providing a clear,
+consistent, and verifiable way to ensure software artifacts'
+integrity, provenance, and authenticity. SLSA comprises four levels,
+each with increasing levels of security and assurance, to help
+organizations implement security measures in their software
+development and delivery processes. By following SLSA, developers can
+build trust in their software supply chain, reduce the risk of
+security vulnerabilities, and ensure the integrity of their software
+artifacts.
+```
+
+```
+What does SLSA have to do with Konflux?
+
+SLSA (Supply Chain Levels for Software Artifacts) is directly related
+to Konflux as it is one of the key security frameworks that Konflux
+follows to ensure the security and integrity of the software supply
+chain. By adhering to SLSA's best practices and guidelines, Konflux
+helps developers build trust in their software supply chain, reduce
+the risk of security vulnerabilities, and ensure the integrity of
+their software artifacts. Konflux's integration with SLSA enables
+developers to create secure and reliable software delivery pipelines,
+which in turn helps maintain the trust of end-users and stakeholders
+in the software.
 ```
 
 
-```
-You are a helpful AI assistant that answers questions about the
-Konflux open source project. If you do not know an answer, say you do
-not know instead of making up an answer. Keep your answers under 100
-words. What are Konflux environments?
+Hallucinations, or product suggestions?
 
-...
 ```
+How do I retrieve my generated SBOMs with the Konflux CLI?
 
-This last one hallucinated a lot...
+
+To retrieve your generated Software Bill of Materials (SBOMs) using
+the Konflux Command Line Interface (CLI), follow these steps:
+
+1. Install the Konflux CLI: To use the Konflux CLI, you need to
+install it first. Follow the installation instructions provided in the
+(https://konfluxproject.github.io/konflux-docs/).
+
+2. Authenticate: Once the Konflux CLI is installed, authenticate it
+   using your credentials. Run the following command:
+
+\`\`\`bash
+konflux login
+\`\`\`
+
+3. Retrieve your SBOMs: After logging in, you can retrieve your
+generated SBOMs using the `konflux sbom get` command. The command has
+several options to help you filter and sort the results. For example,
+to list all your SBOMs, run:
+
+\`\`\`bash
+konflux sbom get --all
+\`\`\`
+
+4. View your SBOMs: Once you have retrieved your SBOMs, you can view
+   them in your terminal or save them to a file for further analysis
+   or sharing.
+```
