@@ -244,19 +244,15 @@ install it first. Follow the installation instructions provided in the
 
 2. Authenticate: Once the Konflux CLI is installed, authenticate it
    using your credentials. Run the following command:
-
-\`\`\`bash
+   
 konflux login
-\`\`\`
 
 3. Retrieve your SBOMs: After logging in, you can retrieve your
 generated SBOMs using the `konflux sbom get` command. The command has
 several options to help you filter and sort the results. For example,
 to list all your SBOMs, run:
 
-\`\`\`bash
 konflux sbom get --all
-\`\`\`
 
 4. View your SBOMs: Once you have retrieved your SBOMs, you can view
    them in your terminal or save them to a file for further analysis
